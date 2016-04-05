@@ -20,11 +20,9 @@ class skeleton {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => "# test bashrc file ! Ooo. ",
+    # content => "# test bashrc file ! Ooo. ",
+    source  =>  'puppet:///modules/skeleton/files/.bashrc',
   }
-  
-  # TODO
-  # should be sourced from a file in module users
   
   
 
