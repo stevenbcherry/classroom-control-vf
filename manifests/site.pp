@@ -62,7 +62,7 @@ node default {
 exec { 'seed motd':
   command     => 'cowsay "Welcome to the terrordome." > /etc/motd' ,
   path        => '/usr/local/bin',
-  umask       => 022,
+  # umask       => 022,
   user        => root,
   creates     => '/etc/motd',
   
