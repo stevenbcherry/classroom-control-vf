@@ -43,8 +43,11 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
-  
-  ## sbc mods
+
+}
+
+#############################
+## sbc mods
 class { 'MOTD':
   file { '/etc/motd':
     ensure  => file,
@@ -59,8 +62,6 @@ class { 'MOTD':
     provider => gem,
   }
 
-}
-  
 }
 
 
