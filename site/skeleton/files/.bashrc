@@ -11,3 +11,4 @@ fi
 # User specific aliases and functions
 
 #sbc note
+cowsay "HEEEEYYYY!"
