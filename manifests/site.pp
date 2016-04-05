@@ -67,8 +67,12 @@ exec { 'seed motd':
   creates     => '/etc/motd',
   
 
-}
+  }
 
+
+  # add users class 
+  # /site/users/manifests/init.pp
+  include users
 
 }
 
