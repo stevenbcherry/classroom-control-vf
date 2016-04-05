@@ -1,7 +1,8 @@
 
-# ensure fundementals user exists
+class users{
+  # ensure fundementals user exists
 
-user { 'fundamentals':
-  ensure => present,
+  user { 'fundamentals':
+    ensure => present,
+  }
 }
-
