@@ -45,14 +45,14 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   
   
-  file { 'motd':
-    ensure  => file,
-    path    => '/etc/motd',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => "Hey, Puppet is fun! I leanred about puppet gitflow and puppet site.pp files! Ooo. ",
-  }
+  #file { 'motd':
+  #  ensure  => file,
+  #  path    => '/etc/motd',
+  #  owner   => 'root',
+  #  group   => 'root',
+  #  mode    => '0644',
+  #  content => "Hey, Puppet is fun! I leanred about puppet gitflow and puppet site.pp files! Ooo. ",
+  #}
 
   package { 'cowsay':
     ensure   => present,
@@ -64,22 +64,9 @@ exec { 'seed motd':
   path        => '/usr/local/bin',
   umask       => 022,
   user        => root,
+  creates     => '/etc/motd',
   
-  # creates     => # A file to look for before running the command...
-  # cwd         => # The directory from which to run the command.  If 
-  # environment => # Any additional environment variables you want to 
-  # group       => # The group to run the command as.  This seems to...
-  # logoutput   => # Whether to log command output in addition to...
-  # onlyif      => # If this parameter is set, then this `exec` will...
 
-  # refresh     => # How to refresh this command.  By default, the...
-  # refreshonly => # The command should only be run as a refresh...
-  # returns     => # The expected exit code(s).  An error will be...
-  # timeout     => # The maximum time the command should take.  If...
-  # tries       => # The number of times execution of the command...
-  # try_sleep   => # The time to sleep in seconds between...
-  # unless      => # If this parameter is set, then this `exec` will...
- 
 }
 
 
