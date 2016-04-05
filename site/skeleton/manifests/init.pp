@@ -20,8 +20,8 @@ class skeleton {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => "# test bashrc file ! Ooo. ",
-    # source  =>  'puppet:///site/skeleton/files/.bashrc',
+    # content => "# test bashrc file ! Ooo. ",
+    source  =>  'file:///skeleton/files/.bashrc',
   }
   
   
