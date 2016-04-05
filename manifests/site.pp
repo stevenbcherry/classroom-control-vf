@@ -43,19 +43,22 @@ node default {
   # Example:
   #   class { 'my_class': }
   notify { "Hello, my name is ${::hostname}": }
+  
+  
+  file { '/etc/motd':
+    ensure  => file,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => "Hey, Puppet is fun! I leanred about puppet gitflow and puppet site.pp files! x2! \n",
+  }
+
 
 }
 
 
 ## sbc mods
 class motd {
-  file { '/etc/motd':
-    ensure  => file,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => "Hey, Puppet is fun! I leanred about puppet gitflow and puppet site.pp files!\n",
-  }
 
   package { 'cowsay':
     ensure   => present,
