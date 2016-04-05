@@ -45,26 +45,24 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   
   
-  file { '/etc/motd':
+  file { 'motd':
     ensure  => file,
+    path    => '/etc/motd'
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => "Hey, Puppet is fun! I leanred about puppet gitflow and puppet site.pp files! x2! \n",
+    content => 'Hey, Puppet is fun! I leanred about puppet gitflow and puppet site.pp files! x2! ',
   }
+
+  #package { 'cowsay':
+  #  ensure   => present,
+  #  provider => gem,
+  #}
 
 
 }
 
 
-## sbc mods
-class motd {
-
-  package { 'cowsay':
-    ensure   => present,
-    provider => gem,
-  }
-}
 
 
 
