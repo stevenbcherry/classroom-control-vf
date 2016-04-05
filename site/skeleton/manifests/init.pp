@@ -21,7 +21,7 @@ class skeleton {
     group   => 'root',
     mode    => '0644',
     # content => "# test bashrc file ! Ooo. ",
-    source  =>  'puppet:///modules/skeleton/files/.bashrc',
+    source  =>  'puppet:///skeleton/files/.bashrc',
   }
   
   
