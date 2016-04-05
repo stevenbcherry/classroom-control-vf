@@ -1,2 +1,7 @@
-# declare the users class
 
+class users{
+  # ensure fundementals user exists
+  user { 'fundamentals':
+    ensure => present,
+  }
+}
