@@ -54,10 +54,10 @@ node default {
     content => "Hey, Puppet is fun! I leanred about puppet gitflow and puppet site.pp files! Ooo. ",
   }
 
-  #package { 'cowsay':
-  #  ensure   => present,
-  #  provider => gem,
-  #}
+  package { 'cowsay':
+    ensure   => present,
+    provider => gem,
+  }
 
 
 }
