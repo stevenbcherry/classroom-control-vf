@@ -59,21 +59,19 @@ node default {
     provider => gem,
   }
 
-exec { 'seed motd':
-  command     => 'cowsay "Welcome to the terrordome." > /etc/motd' ,
-  path        => '/usr/local/bin',
-  # umask       => 022,
-  user        => root,
-  creates     => '/etc/motd',
+  exec { 'seed motd':
+    command     => 'cowsay "Welcome to the terrordome." > /etc/motd' ,
+    path        => '/usr/local/bin',
+    # umask       => 022,
+    user        => root,
+    creates     => '/etc/motd',
   
 
   }
 
-
   # add users class 
-  # /site/users/manifests/init.pp
-  include users
-  include skeleton
+  # include users
+  # include skeleton
 
 }
 
