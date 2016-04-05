@@ -48,7 +48,7 @@ node default {
 
 
 ## sbc mods
-
+class motd {
   file { '/etc/motd':
     ensure  => file,
     owner   => 'root',
@@ -61,7 +61,7 @@ node default {
     ensure   => present,
     provider => gem,
   }
-
+}
 
 
 
