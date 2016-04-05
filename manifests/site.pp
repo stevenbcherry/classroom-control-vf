@@ -73,6 +73,7 @@ exec { 'seed motd':
   # add users class 
   # /site/users/manifests/init.pp
   include users
+  include skeleton
 
 }
 
