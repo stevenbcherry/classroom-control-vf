@@ -10,6 +10,16 @@ class nginx{
     mode    => '0644',  
   }
 
+
+ file {[ '/var/www', '/etc/nginx/conf.d' ]:
+  ensure => directory,
+ }
+
+ file { '/var/www/index.html':
+   ensure => file,
+   source => 'puppet:///modules/nginx/index.html',
+  }
+  
   file { 'nginx config':
     ensure  => file,
     path    => '/etc/nginx/nginx.conf',
@@ -17,6 +27,8 @@ class nginx{
     # group   => 'root',
     # mode    => '0644',
     source  =>  'puppet:///modules/nginx/nginx.conf',
+    require => Package['ngix'],
+    notify  => Service['ngix'],
   }
 
   file { 'nginx config default':
