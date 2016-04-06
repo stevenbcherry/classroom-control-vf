@@ -84,9 +84,11 @@ node default {
 
   #notify { "Hello from outside default node, my name is ${::hostname} ": }
   
-  if $is_virtual {
-    # warning('This is virutal machine.')
-    notify { "This is a VM, my name is ${::hostname} ": }
+  if $::is_virtual {
+
+    $vmname = capitalize($::virtual);
+    
+    notify { "This is a VM, my name is ${::hostname} ${vmname}": }
     # This is where we'd upper case this variable 
     ## $operatingsystem
     # can't do this until we're able to install
