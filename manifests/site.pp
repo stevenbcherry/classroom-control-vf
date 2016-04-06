@@ -80,7 +80,7 @@ node default {
   # include skeleton
   include memcached
   include nginx
-  include aliases
+  # include aliases
 
 
   #notify { "Hello from outside default node, my name is ${::hostname} ": }
