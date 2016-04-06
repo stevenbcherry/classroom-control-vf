@@ -72,6 +72,7 @@ node default {
   # add users class 
   # include users
   # include skeleton
+  include memcached
 
 }
 
