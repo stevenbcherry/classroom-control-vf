@@ -44,7 +44,7 @@ node default {
   # Example:
   #   class { 'my_class': }
 
-  notify { "Hello from inside default node, my name is ${::hostname} ": }
+  # notify { "Hello from inside default node, my name is ${::hostname} ": }
   
 
   # notify{ "OSFAMILY ${::osfamily} \n":  }
@@ -73,28 +73,31 @@ node default {
 
   }
 
+
+}
+
+
   # include users
   # include skeleton
   include memcached
   include nginx
 
 
-  notify { "Hello from outside default node, my name is ${::hostname} ": }
+  #notify { "Hello from outside default node, my name is ${::hostname} ": }
   
-  #if $is_virtual {
-  #  warning('This is virutal machine.')
+  if $is_virtual {
+    warning('This is virutal machine.')
 
+    # This is where we'd upper case this variable 
     ## $operatingsystem
+    # can't do this until we're able to install
+    # https://forge.puppetlabs.com/puppetlabs/stdlib
     
-  #}
-  #else {
+  }
+  else {
   #  # include ntp
-  #}
-
-
-  
-  
-}
+      warning('This is not a virutal machine.')
+  }
 
 
 
