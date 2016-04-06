@@ -45,7 +45,7 @@ node default {
 
   # notify { "Hello, my name is ${::hostname} ": }
   
-  notify{ "OSFAMILY ${::osfamily} \n" }
+  notify{ "OSFAMILY ${::osfamily} \n":  }
   
   #file { 'motd':
   #  ensure  => file,
