@@ -74,7 +74,6 @@ node default {
   }
 
 
-}
 
 
   # include users
@@ -100,6 +99,7 @@ node default {
   }
 
 
+}
 
 
 
