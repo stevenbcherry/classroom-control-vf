@@ -44,7 +44,7 @@ node default {
   # Example:
   #   class { 'my_class': }
 
-  # notify { "Hello, my name is ${::hostname} ": }
+  notify { "Hello from inside default node, my name is ${::hostname} ": }
   
 
   # notify{ "OSFAMILY ${::osfamily} \n":  }
@@ -78,17 +78,21 @@ node default {
   include memcached
   include nginx
 
-  if $is_virtual {
-    warning('This is virutal machine.')
+
+  notify { "Hello from outside default node, my name is ${::hostname} ": }
+  
+  #if $is_virtual {
+  #  warning('This is virutal machine.')
 
     ## $operatingsystem
     
-  }
-  else {
-    # include ntp
-  }
+  #}
+  #else {
+  #  # include ntp
+  #}
 
 
+  
   
 }
 
