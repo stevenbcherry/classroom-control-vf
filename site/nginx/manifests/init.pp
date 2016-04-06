@@ -4,7 +4,7 @@ class nginx{
     ensure   => present,
   }
 
-  file {
+  file { default:
     owner   => 'root',
     group   => 'root',
     mode    => '0644',  
