@@ -15,5 +15,16 @@ class memcached{
  # example settings provided above.
  # The memcached service
 
+  file { 'memcache config':
+    ensure  => file,
+    path    => '/etc/sysconfig/memcached',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  =>  'puppet:///modules/memcached/memcached.conf',
+  }
+  
+
+
 }
 
