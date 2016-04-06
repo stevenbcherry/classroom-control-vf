@@ -39,13 +39,15 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node default {
+
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
 
   # notify { "Hello, my name is ${::hostname} ": }
   
-  notify{ "OSFAMILY ${::osfamily} \n":  }
+
+  # notify{ "OSFAMILY ${::osfamily} \n":  }
   
   #file { 'motd':
   #  ensure  => file,
@@ -75,6 +77,18 @@ node default {
   # include skeleton
   include memcached
   include nginx
+
+  if $is_virtual {
+    warning('This is virutal machine.')
+
+    ## $operatingsystem
+    
+  }
+  else {
+    # include ntp
+  }
+
+
   
 }
 
