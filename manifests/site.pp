@@ -58,6 +58,9 @@ node default {
   #  content => "Hey, Puppet is fun! I leanred about puppet gitflow and puppet site.pp files! Ooo. ",
   #}
 
+  $message = hiera('message')
+  notify { $message: }
+
   package { 'cowsay':
     ensure   => present,
     provider => gem,
