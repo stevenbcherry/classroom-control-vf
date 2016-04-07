@@ -58,6 +58,12 @@ node default {
   #  content => "Hey, Puppet is fun! I leanred about puppet gitflow and puppet site.pp files! Ooo. ",
   #}
 
+
+	class { 'nginx':
+		root => '/var/www/html',
+	}
+
+
   $message = hiera('message')
   notify { $message: }
 
@@ -82,8 +88,13 @@ node default {
   # include users
   # include skeleton
   include memcached
-  include nginx
+  # include nginx
   # include aliases
+
+  # class {'nginx':
+  #   root => '/var/www/html',
+  # }
+
 
 
   #notify { "Hello from outside default node, my name is ${::hostname} ": }
